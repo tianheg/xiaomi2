@@ -1,0 +1,3 @@
+# set tomcat8
+server:
+  port: 8000
