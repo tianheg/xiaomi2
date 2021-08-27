@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh" xmlns:v-bind="http://www.w3.org/1999/xhtml">
 
 <head>
   <meta charset="UTF-8">
@@ -10,10 +10,12 @@
   <link rel="stylesheet" href="./css/cssreset.css">
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./fonts/iconfont.css">
-  <style></style>
+  <script src="./js/vue/vue.js"></script>
+  <script src="./js/vue/axios.min.js"></script>
   <script>
     window.onload=function(){
-      var banner=document.getElementById('banner'),
+      let i;
+        var banner=document.getElementById('banner'),
           pic=document.getElementById('pic').getElementsByTagName("li"),
           list=document.getElementById('list').getElementsByTagName('li'),
           index=0,
@@ -31,7 +33,7 @@
         }
       }
       prev.onclick = function () {
-        if (index ==0){
+        if (index === 0){
           index = pic.length-1;
           changePic(pic.length-1);
         }else{
@@ -40,7 +42,7 @@
 
       }
       // 给每个list下的li定义一个位置
-      for (var i = 0; i < list.length; i++) {
+      for (i = 0; i < list.length; i++) {
         list[i].setAttribute("index", i);
       }
       // 定义并调用自动播放函数
@@ -56,14 +58,13 @@
         timer = setInterval(autoPlay, 2000);
       }
       // 遍历所有数字导航实现划过切换至对应的图片
-      for (var i = 0; i < list.length; i++) {
+      for (i = 0; i < list.length; i++) {
         list[i].onmouseover = function () {
           clearInterval(timer);
           index = this.getAttribute("index");
           changePic(index);
         };
-      };
-
+      }
       function autoPlay () {
         if (index >= pic.length) {
           index = 0;
@@ -88,6 +89,7 @@
 </head>
 
 <body>
+<div id="app"> <!-- Vue Operating area -->
   <!-- 广告图开始 -->
   <div class="gg"></div>
   <!-- 广告图结束 -->
@@ -95,19 +97,9 @@
   <header>
     <div class="box wrap">
       <ul class="left">
-        <li><a href="#">小米商城</a><span>|</span></li>
-        <li><a href="#">MIUI</a><span>|</span></li>
-        <li><a href="#">IoT</a><span>|</span></li>
-        <li><a href="#">云服务</a><span>|</span></li>
-        <li><a href="#">天星数科</a><span>|</span></li>
-        <li><a href="#">有品</a><span>|</span></li>
-        <li><a href="#">小爱开放平台</a><span>|</span></li>
-        <li><a href="#">企业团购</a><span>|</span></li>
-        <li><a href="#">资质证照</a><span>|</span></li>
-        <li><a href="#">协议规则</a><span>|</span></li>
-        <li><a href="#">下载app</a><span>|</span></li>
-        <li><a href="#">智能生活</a><span>|</span></li>
-        <li><a href="#">Select Location</a><span></span></li>
+      <li v-for="type in mi_type">
+          <a v-bind:href="type.url">{{type.name}}</a><span>|</span>
+      </li>
       </ul>
 
       <div class="gwc">
@@ -144,7 +136,7 @@
         <li><a href="#">服务</a></li>
         <li><a href="#">社区</a></li>
       </ul>
-      <div class="seach">
+      <div class="search">
         <form action="" method="">
           <input type="text" placeholder="小米6永远的神">
           <button class="fdj"><i class="iconfont icon-fangdajing"></i></button>
@@ -1137,5 +1129,7 @@
     <img src="./images/slogan2020.png" alt="">
   </div>
   <!-- 底部结束 -->
+</div>
+<script src="./js/system/index.js"></script>
 </body>
 </html>
