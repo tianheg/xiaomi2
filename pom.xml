@@ -9,7 +9,7 @@
     <version>1.0.0</version>
     <parent>
         <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
+        <artifactId>spring-boot-starter-parent</artifactId> <!-- use spring boot -->
         <version>2.3.5.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
@@ -22,7 +22,7 @@
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <artifactId>spring-boot-starter-web</artifactId> <!-- tomcat, mvc -->
             <version>2.5.3</version>
         </dependency>
 
