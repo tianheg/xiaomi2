@@ -126,15 +126,9 @@
         <h1 class="logo"></h1>
       </a>
       <ul>
-        <li><a href="#">小米手机</a></li>
-        <li><a href="#">Redmi红米</a></li>
-        <li><a href="#">电视</a></li>
-        <li><a href="#">笔记本</a></li>
-        <li><a href="#">家电</a></li>
-        <li><a href="#">路由器</a></li>
-        <li><a href="#">智能硬件</a></li>
-        <li><a href="#">服务</a></li>
-        <li><a href="#">社区</a></li>
+        <li v-for="type in product_type">
+          <a v-bind:href="type.url">{{type.name}}</a>
+        </li>
       </ul>
       <div class="search">
         <form action="" method="">
@@ -151,16 +145,18 @@
       <!-- banner 图片 -->
       <div class="banner" id="banner">
         <!-- 3张图 -->
+        <!-- id， url
+          data =[ id: null, src: '']
+        -->
         <ul id="pic">
-          <li><img src="./images/05.webp" alt=""></li>
-          <li><img src="./images/02.webp" alt=""></li>
-          <li><img src="./images/03.webp" alt=""></li>
+          <li v-for="type in lunbo">
+            <img :src="type.src" alt="">
+          </li>
+
         </ul>
         <!-- 小圆点 -->
         <ol id="list">
-          <li class="current" ></li>
-          <li ></li>
-          <li ></li>
+          <li v-for="type in lunbo"></li>
         </ol>
         <!-- 左右小箭头 -->
         <span class="left-button"><</span>
@@ -169,45 +165,9 @@
       <!-- 左侧导航 -->
       <div class="left_nav">
         <ul>
-          <li>
-            <a href="#">手机 电话卡<span>></span></a>
-            <div class="left-nav-content">手机 电话卡123</div>
-          </li>
-          <li>
-            <a href="#">电视 盒子<span>></span></a>
-            <div class="left-nav-content">电视 盒子</div>
-          </li>
-          <li>
-            <a href="#">笔记本 显示器 平板<span>></span></a>
-            <div class="left-nav-content">笔记本 显示器 平板</div>
-          </li>
-          <li>
-            <a href="#">家电 插线板<span>></span></a>
-            <div class="left-nav-content">家电 插线板</div>
-          </li>
-          <li>
-            <a href="#">出行 穿戴<span>></span></a>
-            <div class="left-nav-content">出行 穿戴</div>
-          </li>
-          <li>
-            <a href="#">智能 路由器<span>></span></a>
-            <div class="left-nav-content">智能 路由器</div>
-          </li>
-          <li>
-            <a href="#">电源 配件<span>></span></a>
-            <div class="left-nav-content">电源 配件</div>
-          </li>
-          <li>
-            <a href="#">健康 儿童<span>></span></a>
-            <div class="left-nav-content">健康 儿童</div>
-          </li>
-          <li>
-            <a href="#">耳机 音箱<span>></span></a>
-            <div class="left-nav-content">耳机 音箱</div>
-          </li>
-          <li>
-            <a href="#">生活 箱包<span>></span></a>
-            <div class="left-nav-content">生活 箱包</div>
+          <li v-for="type in left_menu">
+            <a :href="type.url">{{type.name}}<span>></span></a>
+            <div class="left-nav-content">{{type.name}}</div>
           </li>
         </ul>
       </div>
@@ -219,29 +179,16 @@
     <div class="banner_bottom wrap">
       <div class="first">
         <ul>
-          <li>
-            <a href=""><img src="./images/icon01.png" alt=""><br>小米秒杀</a>
-          </li>
-          <li>
-            <a href=""><img src="./images/icon02.png" alt=""><br>小米秒杀</a>
-          </li>
-          <li>
-            <a href=""><img src="./images/icon03.png" alt=""><br>小米秒杀</a>
-          </li>
-          <li>
-            <a href=""><img src="./images/icon04.png" alt=""><br>小米秒杀</a>
-          </li>
-          <li>
-            <a href=""><img src="./images/icon05.png" alt=""><br>小米秒杀</a>
-          </li>
-          <li>
-            <a href=""><img src="./images/icon06.png" alt=""><br>小米秒杀</a>
+          <!-- id, href, src, name-->
+          <li v-for="type in lunsi_first">
+            <a :href="type.href"><img :src="type.src" alt=""><br>{{ type.name }}</a>
           </li>
         </ul>
       </div>
-      <div><a href="#"><img src="./images/a01.jpg" alt=""></a></div>
-      <div><a href="#"><img src="./images/a02.jpg" alt=""></a></div>
-      <div><a href="#"><img src="./images/a03.jpg" alt=""></a></div>
+      <!--  id, href, src -->
+      <div v-for="type in lunsi_back ">
+        <a :href="type.href"><img :src="type.src" alt=""></a>
+      </div>
     </div>
   </div>
   <!-- 固定工具栏开始 -->

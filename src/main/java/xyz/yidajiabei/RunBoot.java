@@ -1,4 +1,4 @@
-package yidajiabei.xyz; // alt + enter move class to certain position
+package xyz.yidajiabei; // alt + enter move class to certain position
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

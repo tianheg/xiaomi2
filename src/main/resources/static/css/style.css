@@ -360,7 +360,8 @@ nav .seach form .fdj:hover{
   font-size: 22px;
   color: #999999;
 }
-.tools div:hover,.tools div:hover i{
+.tools div:hover,
+.tools div:hover i {
   color: #FF6A00;
 }
 /* 固定工具栏结束 */
