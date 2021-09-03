@@ -1,7 +1,22 @@
 # set tomcat8
 server:
   port: 8000
+
+mybatis:
+  configuration:
+    lazy-loading-enabled: true
+    lazy-load-trigger-methods: clone
+  type-aliases-package: xyz.yidajiabei.domain
+
+logging:
+  level:
+      xyz:
+        yidajiabei:
+          mapper: debug
+
 spring:
-    datasource:
-        driver-class-name: com.mysql.cj.jdbc.Driver
-        url: jdbc:mysql://localhost:3306/Cibus?useSSL=true
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/mi?allowPublicKeyRetrieval=true&useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: GTH.20000701
