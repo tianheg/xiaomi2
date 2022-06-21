@@ -68,7 +68,7 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.25</version>
+            <version>8.0.28</version>
         </dependency>
 
         <!-- mybatis 集成到 SpringBoot 中的依赖-->
@@ -120,7 +120,7 @@
                     <dependency>
                         <groupId>mysql</groupId>
                         <artifactId>mysql-connector-java</artifactId>
-                        <version>8.0.25</version>
+                        <version>8.0.28</version>
                     </dependency>
                 </dependencies>
             </plugin>
